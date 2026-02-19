@@ -20,6 +20,8 @@ Le projet repose sur une architecture moderne "Front-end" :
 
 * **Envoi d'e-mails :** [EmailJS](https://www.emailjs.com/) pour la gestion du formulaire sans serveur.
 
+* **Logiciel de code :** Antigravity.
+
 * **Déploiement :** Vercel.
 
 * **Outils IA :** Assistance au code via Gemini et ChatGPT.
