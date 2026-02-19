@@ -83,4 +83,35 @@ Pour visualiser ce projet localement :
    ```bash
 
    git clone [https://github.com/votre-utilisateur/votre-repo.git](https://github.com/votre-utilisateur/votre-repo.git)
+
+
+### 🚀 Utilisation Locale
+ 
+1.  Ouvrez le fichier `index.html` dans votre navigateur.
+
+2.  Pour tester le formulaire de contact, assurez-vous de configurer vos propres clés **EmailJS** dans le script :
+ 
+```javascript
+
+// Initialisation avec votre clé publique
+
+emailjs.init("VOTRE_CLE_PUBLIQUE");
+
+### 👨‍💻 Missions de Stage Documentées
+ 
+* **Programmation** : Création du CV en ligne et développement de ce portfolio interactif.
+
+* **Matériel** : Remise en état d'une unité centrale (remplacement carte mère, configuration BIOS) et diagnostic technique d'un écran TV.
+
+* **Organisation** : Collaboration active aux réunions de coordination du groupe ESPI et suivi des projets DSI.
+ 
+---
+ 
+### 📬 Contact
+ 
+* **Auteur** : Enyssio Peralta Martinez
+
+* **Lien Portfolio** : [Voir mon CV en ligne](https://projetcv-alpha.vercel.app/)
+ 
+ 
  
