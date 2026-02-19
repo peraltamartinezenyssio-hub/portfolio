@@ -6,101 +6,528 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
 </head>
 
 <body>
 
-    <!--header-->
-    <header class=" bg-white text-sky-800">
-        <nav class="py-3">
-            <ul class="flex justify-evenly">
-                <li><img class="w-40 " src="/img/logo.png " alt="logo"></li>
-                <li class="italic font-semibold hover:text-white-700  hover:underline pt-4"><a href="#">Home</a></li>
-                <li class="italic font-semibold hover:text-white-700  hover:underline pt-4"><a href="#formulaire">About</a></li>
-                <li class="italic font-semibold hover:text-white-700  hover:underline pt-4"><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  
     <!--organiser une page web-->
     <main>
           <section>
-           <div class="bg-[url(/img/3.png)] bg-cover w-full h-100">
-                <div class="text-center py-40">
-                    <h1 class="text-4xl font-bold text-white italic uppercase">Enyssio Peralta Martinez</h1>
-                    <h3 class="text-white italic text-2xl">stagiaire au sein du groupe Espi</h3>
-                    <button class="mt-6 bg-sky-700 p-3 cursor-pointer text-white font-semibold italic px-5 rounded-full hover:bg-white hover:text-sky-900"> <a  href="index.html">voir mon cv</a></button>
-                </div>
+          <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
+<div class="bg-white">
+  <header class="absolute fixed inset-x-0 top-0 z-50 backdrop-blur-lg">
+    <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
+      <div class="flex lg:flex-1">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="sr-only">Your Company</span>
+          <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" class="h-8 w-auto" />
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Open main menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="#qui" class="text-sm/6 font-semibold text-gray-900">Qui je suis</a>
+        <a href="#parcours" class="text-sm/6 font-semibold text-gray-900">Mon parcours</a>
+        <a href="#stage" class="text-sm/6 font-semibold text-gray-900">Mon stage</a>
+        <a href="#organisation" class="text-sm/6 font-semibold text-gray-900">Mon organisation</a>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="#contact" class="text-sm/6 font-semibold text-gray-900">Contactez-moi <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </nav>
+    <el-dialog>
+      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+        <div tabindex="0" class="fixed inset-0 focus:outline-none">
+          <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-between">
+              <a href="#" class="-m-1.5 p-1.5">
+                <span class="sr-only">Your Company</span>
+                <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" class="h-8 w-auto" />
+              </a>
+              <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                <span class="sr-only">Close menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
             </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10">
+                <div class="space-y-2 py-6">
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Qui je suis</a>
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Features</a>
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Marketplace</a>
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Company</a>
+                </div>
+                <div class="py-6">
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
+                </div>
+              </div>
+            </div>
+          </el-dialog-panel>
+        </div>
+      </dialog>
+    </el-dialog>
+  </header>
+
+  <div class="relative isolate px-6 pt-14 lg:px-8">
+    <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+      <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"></div>
+    </div>
+    <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+      <div class="text-center">
+        <h1 class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">Enyssio Peralta Martinez</h1>
+        <p class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">stagiaire au sein du groupe Espi</p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <a href="https://projetcv-alpha.vercel.app/" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Voir mon cv</a>
+          
+      </div>
+    </div>
+    <div aria-hidden="true" class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+      <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"></div>
+    </div>
+  </div>
+</div>
         </section>
         <!--qui je suis-->
       
-        <section>
-            <div class="text-center py-3">
-              <h3 class="text-2xl font-bold text-sky-800 italic uppercase underline">qui je suis</h3>  
-              <p class="text-gray-600 italic mt-6">Elève en seconde professionelle Métiers des transitions numériques et
-                énergétiques, motivé et curieux, je recherche un stage pour découvrir le
-                monde professionnel, développer mes compétences techniques et contribuer
-                à des projets liés aux nouvelles techologies et à l'énergie. Sérieux, ponctuel et
-                volontaire, je souhaite mettre en pratique ce que j'apprends en cours</p>
+        <section id="qui">
+           <div class="overflow-hidden bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+      <div class="lg:pt-4 lg:pr-8">
+        <div class="lg:max-w-lg">
+         
+          <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Qui je suis</p>
+          <p class="mt-6 text-lg/8 text-gray-700">Élève en seconde professionnelle Métiers des transitions numériques et énergétiques, motivé et curieux, je recherche un stage pour découvrir le monde professionnel, développer mes compétences techniques et contribuer à des projets liés aux nouvelles technologies et à l'énergie. Sérieux, ponctuel et volontaire, je souhaite mettre en pratique ce que j'apprends en cours</p>
+          <dl class="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
+            <div class="relative pl-9">
+              
+                
+                
+             
+             
             </div>
+            <div class="relative pl-9">
+              
+               
+              
+              
+            </div>
+            
+        </div>
+      </div>
+      <img width="2432" height="1442" src="img/5.png" alt="cv" class="w-2xl max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-120 md:-ml-4 lg:-ml-0" />
+    </div>
+  </div>
+</div>
         </section>
         <!--mon parcours-->
-        <section>
-            <div class="text-center py-3">
-              <h3 class="text-2xl font-bold text-sky-800 italic uppercase underline">mon parcours</h3>  
-            <ul class="flex justify-start list-disc inline-block ml-8 mt-6 ">
-                <li>Lycée la Marre Carrée septembre 2025 - à ce jour</li>
-                <li>Collège Laboétie septembre 2021 - Juin 2025</li>
-            </ul>
-            </div>
-        </section>
+       <section id="parcours">
+        <div class="bg-white py-24 sm:py-32">
+<div class="mx-auto max-w-7xl px-6 lg:px-8">
+<div class="mx-auto max-w-2xl lg:text-center">
+<h3 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance">Mon parcours</h3>
+<p class="mt-6 text-lg/8 text-gray-700"></p>
+</div>
+<div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+<dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+<div class="relative pl-16">
+<dt class="text-base/7 font-semibold text-gray-900">
+<div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-white">
+<path d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+</div>
+            Lycée la Marre Carrée septembre 2025 - à ce jour
+</dt>
+<dd class="mt-2 text-base/7 text-gray-600 "></dd>
+</div>
+<div class="relative pl-16 ">
+<dt class="text-base/7 font-semibold text-gray-900 ">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-white">
+<path d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" stroke-linecap="" stroke-linejoin="round" />
+</svg>
+</div>
+        
+
+      
+</dt>
+<dd class="mt-2 text-base/7 text-gray-600">
+</div>
+<div class="relative pl-16 ml-40">
+<dt class="text-base/7 font-semibold text-gray-900">
+<div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-white">
+<path d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+</div>
+            Collège Laboétie septembre 2021 - Juin 2025
+</dt>
+<dd class="mt-2 text-base/7 text-gray-600"></dd>
+</div>
+</dl>
+</div>
+</div>
+</div>
+       </section>
         <!--mon stage-->
-        <section class="flex justify-center py-3">
-            <div>
-              <h3 class="text-2xl font-bold text-sky-800 italic uppercase underline text-center">mon stage</h3>  
-            <ul class="flex justify-start list-disc inline-block ml-80 mt-6 ">
-                <li>Affichage du contenu du CV en HTML</li>
-                <li>Mise en forme esthétique du cv avec Tailwind CSS</li>
-                <li>Mise en ligne du CV avec Vercel</li>
-                <li>Utilisation d’outils d’aide au développement (ChatGPT, Gemini)</li>
-                <li>Création d’un projet portfolio web</li>
-                <li>Organisation du projet dans un dossier portfolio</li>
-                <li>Structuration du site avec des sections HTML</li>
-                <li>Création du backend du formulaire de contact</li>
-                <li>Mise en place du style visuel du portfolio</li>
-                <li>Manipulation d’une API d’envoi d’e-mails</li>
-                <li>Apprentissage de la gestion des données en base de données</li>
-                <li>Mise en production du projet</li>
-                <li>Apprentissage des bases du développement web (HTML, CSS, JavaScript)</li>
-                <li>Réparation d'un écran tv avec l'aide de Souley LITIE Gestionnaire exploitation système</li>
-                <li>Participation d'une réunion au sein du groupe Espi</li>
-            </ul>
+        <section id="stage">
+
+          <div class="bg-white py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+              <div class="mx-auto max-w-2xl lg:mx-0">
+                <h2 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Mon stage</h2>
+                <p class="mt-2 text-lg/8 text-gray-600">Toutes les tâches que j'ai effectuées tous du long de mon stage</p>
+              </div>
+              <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                <article class="flex max-w-xl flex-col items-start justify-between">
+                   <div class="relative mt-8 flex items-center gap-x-4 justify-self-end">
+                    <img src="img/6.png" alt="" class=" rounded-md bg-gray-50 mb-6" />
+                    <div class="text-sm/6">
+                      
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-x-4 text-xs">
+                    <time datetime="2020-03-16" class="text-gray-500">03 Février 2026</time>
+                    <a href="#" class="relative z-10 rounded-full bg-indigo-100 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Programmation</a>
+                  </div>
+                  <div class="group relative grow">
+                    <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+                      <a href="#">
+                        <span class="absolute inset-0"></span>
+                        Création d'un cv
+                      </a>
+                    </h3>
+                    <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">J’ai affiché le contenu du CV en HTML, réalisé la mise en forme esthétique du CV avec Tailwind, mis le CV en ligne avec Vercel, et utilisé des outils d’aide au développement tels que Antigravity ChatGPT et Github.</p>
+                  </div>
+                  <div class="relative mt-8 flex items-center gap-x-4 justify-self-end">
+                    <div class="text-sm/6">
+                      <a href="https://projetcv-alpha.vercel.app/" class="relative z-10 rounded-md bg-indigo-500 px-3 py-3 font-medium text-white hover:bg-indigo-600" target="_blank">Voir mon CV</a>
+                    </div>
+                  </div>
+                </article>
+                <article class="flex max-w-xl flex-col items-start justify-between">
+                   <div class="relative mt-8 flex items-center gap-x-4 justify-self-end">
+                    <img src="img/dell.jpg" alt="" class=" rounded-md bg-gray-50 mb-6" />
+                    <div class="text-sm/6">
+                      
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-x-4 text-xs">
+                    <time datetime="2020-03-16" class="text-gray-500">03 Février 2026</time>
+                    <a href="#" class="relative z-10 rounded-full bg-green-100 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Matériel</a>
+                  </div>
+                  <div class="group relative grow">
+                    <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+                      <a href="#">
+                        <span class="absolute inset-0"></span>
+                        Préparation d'un ordinateur pour une cliente
+                      </a>
+                    </h3>
+                    <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">Remise en état opérationnel d'une unité centrale : remplacement de la carte mère, configuration du BIOS et exécution du cycle complet de mises à jour système pour garantir la stabilité et la performance du matériel.</p>
+                  </div>
+                  <div class="relative mt-8 flex items-center gap-x-4 justify-self-end">
+                    <div class="text-sm/6">
+                      <a href="stage/cliente.html" class="relative z-10 rounded-md bg-indigo-500 px-3 py-3 font-medium text-white hover:bg-indigo-600" target="_blank">Voir ma mission</a>
+                    </div>
+                  </div>
+                </article>
+                <article class="flex max-w-xl flex-col items-start justify-between">
+                   <div class="relative mt-4 flex items-center gap-x-4 justify-self-end">
+                    <img src="img/portfolio.png" alt="" class="rounded-md bg-gray-50 mb-6" />
+                    <div class="text-sm/6">
+                      
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-x-4 text-xs">
+                    <time datetime="2020-03-16" class="text-gray-500">03 Février 2026</time>
+                    <a href="#" class="relative z-10 rounded-full bg-indigo-100 px-3 py-1.5 font-medium text-gray-600 hover:bg-indigo-100">Programmation</a>
+                  </div>
+                  <div class="group relative grow">
+                    <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+                      <a href="#">
+                        <span class="absolute inset-0"></span>
+                        Création d’un projet portfolio web
+                      </a>
+                    </h3>
+                    <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">Conception et déploiement d'un portfolio web structuré en HTML/CSS. Ce projet inclut l'intégration d'un formulaire de contact dynamique via une API d'envoi d'e-mails, ainsi que la maîtrise des fondamentaux du développement front-end (JavaScript) et de la mise en production.</p>
+                  </div>
+                  <div class="relative mt-8 flex items-center gap-x-4 justify-self-end">
+                    <div class="text-sm/6">
+                      <a href="" class="relative z-10 rounded-md bg-indigo-500 px-3 py-3 font-medium text-white hover:bg-indigo-600" target="_blank">Voir mon portfolio</a>
+                    </div>
+                  </div>
+                </article>
+                <article class="flex max-w-xl flex-col items-start justify-between">
+                   <div class="relative mt-8 flex items-center gap-x-4 justify-self-end">
+                    <img src="img/ecran.jpg" alt="" class=" rounded-md bg-gray-50 mb-6" />
+                    <div class="text-sm/6">
+                      
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-x-4 text-xs">
+                    <time datetime="2020-03-16" class="text-gray-500">03 Février 2026</time>
+                    <a href="#" class="relative z-10 rounded-full bg-green-100 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Matériel</a>
+                  </div>
+                  <div class="group relative grow">
+                    <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+                      <a href="#">
+                        <span class="absolute inset-0"></span>
+                        Réparation d'un écran télé
+                      </a>
+                    </h3>
+                    <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">Maintenance de matériel d'affichage : Diagnostic et résolution d'une panne matérielle sur un écran TV en collaboration avec le Gestionnaire d’Exploitation Système. Identification d'un défaut de connectique et rétablissement opérationnel de l'équipement.</p>
+                  </div>
+                  <div class="relative mt-8 flex items-center gap-x-4 justify-self-end">
+                    <div class="text-sm/6">
+                      <a href="stage/ecran.html" class="relative z-10 rounded-md bg-indigo-500 px-3 py-3 font-medium text-white hover:bg-indigo-600" target="_blank">Voir ma mission</a>
+                    </div>
+                  </div>
+                </article>
+                
+                
+              </div>
             </div>
+          </div>
+
         </section>
-        <!--me contacter-->
-        <section class="flex justify-center py-3">
-            <div>
-              <h3 class="text-2xl font-bold text-sky-800 italic uppercase underline text-center">me contacter</h3> 
-              <br> 
-            <form action="" method="get" class="">
-                <div class="">
-                <label for="nom">Entrez votre nom&nbsp;</label>
-                <input type="text" name="nom" id="nom">
+        <section id="organisation">
+            <div class="bg-gray-50 py-24 sm:py-32">
+              <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+                <h2 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-center text-gray-900 sm:text-5xl">Mon organisation en stage</h2>
+                <div class="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+                  <div class="relative lg:row-span-2">
+                    <div class="absolute inset-px rounded-lg bg-white lg:rounded-l-4xl"></div>
+                    <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
+                      <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+                        <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Participation d'une réunion </p>
+                        <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Collaboration active aux réunions de coordination du groupe ESPI : suivi de l'état d'avancement des projets et alignement des objectifs opérationnels avec les équipes.</p>
+                      </div>
+                      <div class="@container relative min-h-120 w-full grow max-lg:mx-auto max-lg:max-w-sm">
+                        <div class="absolute inset-x-10 top-10 bottom-0 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl">
+                          <img src="img/7.jpg" alt="" class="size-full object-cover object-top" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 lg:rounded-l-4xl"></div>
+                  </div>
+                  <div class="relative max-lg:row-start-1">
+                    <div class="absolute inset-px rounded-lg bg-white max-lg:rounded-t-4xl"></div>
+                    <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
+                      <div class="px-8 pt-8 sm:px-10 sm:pt-10">
+                        <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Organisation de mes tâches</p>
+                        <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Découvrez ici mon parcours de mission</p>
+                      </div>
+                      <div class="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
+                        <img src="img/8.png" alt="" class="w-full max-lg:max-w-xs" />
+                      </div>
+                    </div>
+                    <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-t-4xl"></div>
+                  </div>
+                  <div class="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
+                    <div class="absolute inset-px rounded-lg bg-white"></div>
+                    <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+                      <div class="px-8 pt-8 sm:px-10 sm:pt-10">
+                        <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Programmations,matériel et régle de sécurité</p>
+                        <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">j'ai programmer mon portfolio à l'aide des outils tels que talwinds css,JavaScript,HTML et Github et des outils comme gemini et chat gpt et j'ai configurere des ordinateurs</p>
+                      </div>
+                      <div class="@container flex flex-1 items-center max-lg:py-6 lg:pb-2">
+                        <img src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png" alt="" class="h-[min(152px,40cqw)] object-cover" />
+                      </div>
+                    </div>
+                    <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5"></div>
+                  </div>
+                  <div class="relative lg:row-span-2">
+                    <div class="absolute inset-px rounded-lg bg-white max-lg:rounded-b-4xl lg:rounded-r-4xl"></div>
+                    <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
+                      <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+                        <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Mon code</p>
+                        <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">voici un exemple de mon code qui m'a permis de fair mon portfolio</p>
+                      </div>
+                      <div class="relative min-h-120 w-full grow">
+                        <div class="absolute top-10 right-0 bottom-0 left-10 overflow-hidden rounded-tl-xl bg-gray-900 shadow-2xl outline outline-white/10">
+                          <div class="flex bg-gray-900 outline outline-white/5">
+                            <div class="-mb-px flex text-sm/6 font-medium text-gray-400">
+                              <div class="border-r border-b border-r-white/10 border-b-white/20 bg-white/5 px-4 py-2 text-white">index.html</div>
+                              <div class="border-r border-gray-600/10 px-4 py-2">styles.css</div>
+                            </div>
+                          </div>
+                          <div class="px-6 pt-6 pb-14">
+                            <!-- Your code example -->
+                            <pre class="bg-slate-900 p-6 rounded-xl font-mono text-sm leading-relaxed overflow-x-auto border border-blue-900/50 shadow-lg">
+                                <code class="text-blue-100">
+              <span class="text-blue-500">&lt;!DOCTYPE html&gt;</span>
+              <span class="text-sky-400">&lt;html</span> <span class="text-cyan-400">lang</span>=<span class="text-blue-300">"en"</span><span class="text-sky-400">&gt;</span>
+              <span class="text-sky-400">&lt;head&gt;</span>
+                  <span class="text-sky-400">&lt;meta</span> <span class="text-cyan-400">charset</span>=<span class="text-blue-300">"UTF-8"</span><span class="text-sky-400">&gt;</span>
+                  <span class="text-sky-400">&lt;meta</span> <span class="text-cyan-400">name</span>=<span class="text-blue-300">"viewport"</span> <span class="text-cyan-400">content</span>=<span class="text-blue-300">"width=device-width, initial-scale=1.0"</span><span class="text-sky-400">&gt;</span>
+                  <span class="text-sky-400">&lt;title&gt;</span>Document<span class="text-sky-400">&lt;/title&gt;</span>
+              <span class="text-sky-400">&lt;/head&gt;</span>
+              <span class="text-sky-400">&lt;body&gt;</span>
+                  <span class="text-sky-400">&lt;main&gt;</span>
+                      <span class="text-sky-400">&lt;section&gt;</span>
+                          <span class="text-sky-400">&lt;div</span> <span class="text-cyan-400">class</span>=<span class="text-blue-300">""</span><span class="text-sky-400">&gt;</span>
+                              <span class="text-sky-400">&lt;div</span> <span class="text-cyan-400">class</span>=<span class="text-blue-300">""</span><span class="text-sky-400">&gt;</span>
+                                  <span class="text-sky-400">&lt;h1&gt;</span>hello world<span class="text-sky-400">&lt;/h1&gt;</span>
+                                  <span class="text-sky-400">&lt;p&gt;</span>hello world<span class="text-sky-400">&lt;/p&gt;</span>
+                                  <span class="text-sky-400">&lt;button&gt;</span>hello world<span class="text-sky-400">&lt;/button&gt;</span>
+                              <span class="text-sky-400">&lt;/div&gt;</span>
+                          <span class="text-sky-400">&lt;/div&gt;</span>
+                      <span class="text-sky-400">&lt;/section&gt;</span>
+                  <span class="text-sky-400">&lt;/main&gt;</span>
+              <span class="text-sky-400">&lt;/body&gt;</span>
+              <span class="text-sky-400">&lt;/html&gt;</span>
+                                </code>
+                            </pre>
+                                
+                          </div>
+                        </div>
+                      </div>
+                    <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-b-4xl lg:rounded-r-4xl"></div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+        </section>
+         <section>
+           <div class="bg-white py-24 sm:py-32">
+             <div class="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
+                <div class="max-w-xl">
+                  <h2 class="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">Mon équipe</h2>
+                  <p class="mt-6 text-lg/8 text-gray-600">Vous pouvez voir tous les membres du personnel</p>
+                    <button command="show-modal" commandfor="dialog" class="rounded-md bg-indigo-600 px-3.5 py-4 my-10 text-sm font-semibold text-white cursor-pointer hover:bg-indigo-950">Voir mon organigramme</button>
+                    <el-dialog>
+                      <dialog id="dialog" aria-labelledby="dialog-title" class="fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent">
+                        <el-dialog-backdrop class="fixed inset-0 bg-gray-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"></el-dialog-backdrop>
+
+                        <div tabindex="0" class="flex min-h-full items-end justify-center p-4 text-center focus:outline-none sm:items-center sm:p-0">
+                          <el-dialog-panel class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-lg data-closed:sm:translate-y-0 data-closed:sm:scale-95">
+                            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                              <div class="sm:flex sm:items-start">
+                                <div class="mx-auto flex size-12 shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:size-10">
+                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-red-600">
+                                    <path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" stroke-linecap="round" stroke-linejoin="round" />
+                                  </svg>
+                                </div>
+                                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                  <h3 id="dialog-title" class="text-base font-semibold text-gray-900">Mon organigramme</h3>
+                                  <div class="mt-2">
+                                    <img src="img/15.png" alt="team">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                              <button type="button" command="close" commandfor="dialog" class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-red-500 sm:ml-3 sm:w-auto">Retour</button>
+                            </div>
+                          </el-dialog-panel>
+                        </div>
+                      </dialog>
+                    </el-dialog>
 
                 </div>
-                <div>
-                 <label for="email">Entrez votre email&nbsp;:</label>
-                 <input type="email" name="email" id="email" required />
-                </div> 
-                <div class="">
-                   <label for="story">Racontez-nous votre histoire&nbsp;:</label>
-                  <br>
-                  <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                <ul role="list" class="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+                  <li>
+                    <div class="flex items-center gap-x-6">
+                      <img src="img/10.png" alt="" class="size-16 rounded-full outline-1 -outline-offset-1 outline-black/5" />
+                      <div>
+                        <h3 class="text-base/7 font-semibold tracking-tight text-gray-900">Didier LATOUR</h3>
+                        <p class="text-sm/6 font-semibold text-indigo-600">Directeur des systhèmes d'information</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="flex items-center gap-x-6">
+                      <img src="img/11.png" alt="" class="size-16 rounded-full outline-1 -outline-offset-1 outline-black/5" />
+                      <div>
+                        <h3 class="text-base/7 font-semibold tracking-tight text-gray-900">Leïla VAUGHN</h3>
+                        <p class="text-sm/6 font-semibold text-indigo-600">Responsable outils et métiers</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="flex items-center gap-x-6">
+                      <img src="img/12.jpg" alt="" class="size-16 rounded-full outline-1 -outline-offset-1 outline-black/5" />
+                      <div>
+                        <h3 class="text-base/7 font-semibold tracking-tight text-gray-900">Andy Vespuce</h3>
+                        <p class="text-sm/6 font-semibold text-indigo-600">Tuteur de mon stage et développeur Fullstack en informatique</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div> 
+        </section>
+      
+        <!--me contacter-->
+        <section  id="contact" class="flex justify-center py-3">
+           <div class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+              <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+                <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-1/2 -z-10 aspect-1155/678 w-144.5 max-w-none -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-288.75"></div>
+              </div>
+              <div class="mx-auto max-w-2xl text-center">
+                <h2 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">Contact </h2>
+                <p class="mt-2 text-lg/8 text-gray-600"></p>
+              </div>
+              <form id="contact-form" action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+                <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                  <div>
+                    <label for="first-name" class="block text-sm/6 font-semibold text-gray-900">Nom /Prénom</label>
+                    <div class="mt-2.5">
+                      <input required id="first-name" type="text" name="first-name" autocomplete="given-name" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+                    </div>
+                  </div>
+                
+                  
+                  <div class="sm:col-span-2">
+                    <label for="email" class="block text-sm/6 font-semibold text-gray-900">Courriel</label>
+                    <div class="mt-2.5">
+                      <input required id="email" type="email" name="email" autocomplete="email" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+                    </div>
+                  </div>
+                  <div class="sm:col-span-2">
+
+                    <div class="mt-2.5">
+                      <div class="flex rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
+                      
+                        
+                    </div>
+                  </div>
+                  <div class="sm:col-span-2">
+                    <label for="message" class="block text-sm/6 font-semibold text-gray-900">Message</label>
+                    <div class="mt-2.5">
+                      <textarea required id="message" name="message" rows="4" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"></textarea>
+                    </div>
+                  </div>
+                  <div class="flex gap-x-4 sm:col-span-2">
+                    <div class="flex h-6 items-center">
+                      <div class="group relative inline-flex w-8 shrink-0 rounded-full bg-gray-200 p-px inset-ring inset-ring-gray-900/5 outline-offset-2 outline-indigo-600 transition-colors duration-200 ease-in-out has-checked:bg-indigo-600 has-focus-visible:outline-2">
+                        <span class="size-4 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-3.5"></span>
+                        <input id="agree-to-policies" type="checkbox" name="agree-to-policies" aria-label="Agree to policies" class="absolute inset-0 size-full appearance-none focus:outline-hidden" />
+                      </div>
+                    </div>
+                    <label for="agree-to-policies" class="text-sm/6 text-gray-600">
+                      En sélectionnant cette option, vous acceptez nos
+                      <a href="#" class="font-semibold whitespace-nowrap text-indigo-600">politique de confidentialité</a>.
+                    </label>
+                  </div>
                 </div>
-                <div class="output wrapper">
-                    <input type="submit"value="valider"/>
+                <div class="mt-10">
+                  <button type="submit" class="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Parlons-en</button>
                 </div>
-            </form>
+              </form>
             </div>
         </section>
 
@@ -109,6 +536,53 @@
     <footer>
         
     </footer>
+
+
+    <script type="text/javascript">
+
+        (function(){
+
+            // 1. Mets ta clé publique ici
+
+            emailjs.init("fB35ITUpYGM_HEinW");
+
+        })();
+      
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+
+              event.preventDefault();
+      
+              const btn = this.querySelector('button[type="submit"]');
+
+              btn.innerText = "Envoi en cours...";
+      
+              // 2. Mets ton Service ID et ton Template ID ici
+
+              // 'this' représente ton formulaire HTML
+
+              emailjs.sendForm('service_0gkwlfc', 'template_3zqvvmt', this)
+
+                  .then(() => {
+
+                      alert('Bravo ! E-mail envoyé.');
+
+                      btn.innerText = "Valider";
+
+                      this.reset();
+
+                  }, (error) => {
+
+                      alert('Oups... l\'envoi a échoué.');
+
+                      console.log(error);
+
+                      btn.innerText = "Réessayer";
+
+                  });
+
+          });
+    </script>
+ 
 </body>
 
 </html>
