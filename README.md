@@ -1,41 +1,86 @@
-Cahier des Charges - Portfolio Professionnel
-1. Présentation du Projet
-Ce projet consiste en la création d'un portfolio numérique personnel. Il a pour but de présenter mon profil, mon parcours scolaire, ainsi que les missions effectuées lors de mon stage au sein du Groupe ESPI.
-2. Objectifs
-Visibilité : Présenter mon CV et mes compétences de manière moderne.
-Traçabilité : Documenter les missions techniques réalisées en stage (matériel et programmation).
-Contact : Permettre aux recruteurs ou partenaires de me contacter directement via un formulaire fonctionnel.
-3. Spécifications Techniques
-Technologies Utilisées
-HTML5 : Structure sémantique du contenu.
-Tailwind CSS (v4) : Framework CSS "Utility-First" pour un design responsive et moderne, incluant des effets de flou (backdrop-blur) et des dégradés complexes.
-JavaScript (ES6) : Gestion de l'interactivité et de l'envoi du formulaire.
-EmailJS : API tierce permettant l'envoi d'e-mails sans backend dédié.
-Vercel : Plateforme de déploiement et d'hébergement.
-Architecture du Code
-Le code est organisé en sections distinctes pour une meilleure navigation :
-Header : Menu de navigation fixe avec effet de flou et menu mobile intégré.
-Hero Section : Présentation principale avec appel à l'action (Lien vers le CV).
-Section "Qui je suis" : Résumé du profil professionnel.
-Section "Parcours" : Chronologie de la formation (Lycée et Collège).
-Section "Mon Stage" : Grille de cartes détaillant les missions (Programmation, Maintenance matériel).
-Section "Organisation" : Utilisation d'un layout "Bento Grid" pour expliquer les méthodes de travail et les outils (GitHub, ChatGPT, Gemini).
-Section "Équipe" : Organigramme interactif utilisant des fenêtres modales (<dialog>).
-Section "Contact" : Formulaire dynamique relié à EmailJS.
-4. Fonctionnalités Implémentées
-Design Responsive : Le site s'adapte automatiquement aux écrans d'ordinateurs, tablettes et smartphones.
-Navigation Fluide : Liens d'ancrage internes pour naviguer entre les sections.
-Fenêtres Modales : Affichage de l'organigramme de l'entreprise via une boîte de dialogue interactive.
-Gestionnaire d'Email :
-Validation des champs obligatoires.
-Retour visuel utilisateur ("Envoi en cours...", "Bravo !").
-Réinitialisation automatique du formulaire après envoi.
-5. Outils de Développement
-Éditeur : VS Code.
-IA Génératives : ChatGPT & Gemini (Aide à la structure et au débogage).
-Versionnage : GitHub pour la sauvegarde et l'historique des modifications.
-Quelques petits conseils pour ton GitHub :
-Images : Assure-toi que ton dossier img/ est bien présent sur GitHub, sinon tes photos ne s'afficheront pas.
-Sécurité : Pour un projet pro, on évite normalement de laisser les clés API en clair, mais pour un portfolio de stage, c'est tout à fait acceptable de montrer que tu sais configurer EmailJS !
-Lien Vercel : N'oublie pas d'ajouter le lien de ton site dans la description "About" de ton dépôt GitHub.
+# 🚀 Portfolio de Stage - Enyssio Peralta Martinez
+ 
+Bienvenue sur le dépôt de mon portfolio numérique. Ce projet a été réalisé dans le cadre de ma formation en **seconde professionnelle MTNE** (Métiers des Transitions Numériques et Énergétiques) lors de mon stage au sein du **Groupe ESPI**.
+ 
+## 📖 Présentation du Projet
+
+Ce site vitrine a pour objectif de documenter mes compétences acquises, mon parcours scolaire et les missions techniques réalisées en entreprise. Il sert d'interface entre mon profil d'élève et le monde professionnel.
+ 
+---
+ 
+## 🛠️ Spécifications Techniques
+ 
+Le projet repose sur une architecture moderne "Front-end" :
+ 
+* **Structure :** HTML5 sémantique.
+
+* **Style :** [Tailwind CSS v4](https://tailwindcss.com/) (utilisation du CDN pour un développement rapide).
+
+* **Interactivité :** JavaScript (ES6+).
+
+* **Envoi d'e-mails :** [EmailJS](https://www.emailjs.com/) pour la gestion du formulaire sans serveur.
+
+* **Déploiement :** Vercel.
+
+* **Outils IA :** Assistance au code via Gemini et ChatGPT.
+ 
+---
+ 
+## ⚙️ Logique de Gestion (Intégration API)
+ 
+Dans le cadre de l'évolution du projet et de la compréhension des systèmes d'information du Groupe ESPI, l'application suit des règles strictes pour la génération de documents (type bulletins) via l'API Yparéo :
+ 
+### 1. Sélection des paramètres
+
+L'utilisateur interagit avec un formulaire dynamique :
+
+* **Campus :** Liste filtrée par site via l'API.
+
+* **Groupe :** Filtrage par campus avec exclusion automatique des groupes BTS, Césure, RP et DDS.
+
+* **Période d'évaluation :** Année scolaire 2025-2026 uniquement (hors périodes BTS).
+ 
+### 2. Validation de cohérence
+
+Le système empêche les erreurs de saisie grâce à des règles métier :
+
+* Un groupe **ALT** (Alternance) ne peut pas être associé à une période **TP** (Temps Plein).
+
+* Un groupe **TP** ne peut pas être associé à une période **ALT**.
+ 
+---
+ 
+## 📋 Données Récupérées (Structure API Yparéo)
+ 
+Lors de la soumission, l'application interroge l'API en parallèle pour récupérer les jeux de données suivants :
+ 
+| Données | Description |
+
+| :--- | :--- |
+
+| `APPRENANT` | Identité des étudiants du groupe |
+
+| `MOYENNES_UE` | Moyennes par Unité d'Enseignement |
+
+| `MOYENNE_GENERALE` | Score global de chaque étudiant |
+
+| `MATIERE / ECTS` | Détails des matières et crédits associés |
+
+| `OBSERVATIONS` | Appréciations du responsable pédagogique |
+
+| `ABSENCE` | Suivi des retards et absences (justifiées ou non) |
+
+| `GROUPE / SITE` | Informations structurelles du campus |
+ 
+---
+ 
+## 🔧 Installation et Utilisation
+ 
+Pour visualiser ce projet localement :
+ 
+1. Clonez le dépôt :
+
+   ```bash
+
+   git clone [https://github.com/votre-utilisateur/votre-repo.git](https://github.com/votre-utilisateur/votre-repo.git)
  
